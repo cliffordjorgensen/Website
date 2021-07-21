@@ -15,5 +15,10 @@ h1 {
     color: #0f1101;
 }
 
+.i-am-center {
+    margin: auto;
+    max-width: auto;
+}
+
 
 /*background-color:none !important;*/
