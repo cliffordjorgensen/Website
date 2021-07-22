@@ -1,14 +1,14 @@
 
-var superApe = "Bitcoin is Better";
-var superLame = ["ethereum","eth", "doge","xrp","shib"];
+var superLame = "congratulations you are a crypto APE";
+var superApe = ["bitcoin","hydra","kcs","matic"];
 var userGuess = prompt("What is the best crypto currency?");
 var userGuessLower = userGuess.toLowerCase();
 
-if (superLame.indexOf(userGuessLower) === -1){
-  alert ("congratulations you are a crypto APE");
-}
+if (superApe.indexOf(userGuessLower) === -1){
+  alert ("Bitcoin is Better");
+} 
 else {
-  alert(superApe);
+  alert(superLame);
 }
 
 $(document).ready(function(){
