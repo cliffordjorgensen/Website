@@ -4,6 +4,20 @@ var superApe = ["bitcoin","hydra","kcs","matic"];
 var userGuess = prompt("What is the best crypto currency?");
 var userGuessLower = userGuess.toLowerCase();
 
+var queryURL = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd";
+
+$.ajax({
+  url:queryURL,
+  method: "GET"
+}).then(function(response){
+  console.log(response.bitcoin.usd);
+  var bitDiv = $("<div>");
+  var curBitPrice = response.bitcoin.usd;
+  bitDiv.prepend(curBitPrice);
+  $("#bitcoin-price").prepend(bitDiv);
+
+})
+
 if (superApe.indexOf(userGuessLower) === -1){
   alert ("Bitcoin is Better");
 } 
@@ -13,6 +27,8 @@ else {
 
 $(document).ready(function(){
 
+
+  
 
 $(".force-button").on("click", function(){
   var person = $(this).attr("data-person");
