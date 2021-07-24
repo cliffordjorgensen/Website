@@ -4,17 +4,26 @@ var superApe = ["bitcoin","hydra","kcs","matic"];
 var userGuess = prompt("What is the best crypto currency?");
 var userGuessLower = userGuess.toLowerCase();
 
-var queryURL = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd";
+var queryURL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false";  
+// simple/price?ids=hydra%2Cbitcoin&vs_currencies=usd
 
 $.ajax({
   url:queryURL,
   method: "GET"
 }).then(function(response){
-  console.log(response.bitcoin.usd);
-  var bitDiv = $("<div>");
-  var curBitPrice = response.bitcoin.usd;
-  bitDiv.prepend(curBitPrice);
-  $("#bitcoin-price").prepend(bitDiv);
+  results = response
+  
+  for (var i = 0; i < results.length; i ++ ){
+    var coinName = results[i].name;
+    var coinPrice =results[i].current_price;
+    console.log(coinName)
+    console.log(coinPrice)
+    var bitDiv = $("<div class=table>");
+    bitDiv.append(coinName, " = ", coinPrice, $("<br>"));
+    
+    $("#bitcoin-price").append(bitDiv);
+
+  };
 
 })
 
@@ -26,9 +35,6 @@ else {
 }
 
 $(document).ready(function(){
-
-
-  
 
 $(".force-button").on("click", function(){
   var person = $(this).attr("data-person");
