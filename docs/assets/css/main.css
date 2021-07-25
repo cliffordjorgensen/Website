@@ -1,6 +1,3 @@
-/* @import url("bootstrap.min.css");
-@import url("bootstrap-theme.css"); */
-
 h2 {
     color: black;
     size: 2in;
@@ -13,6 +10,8 @@ h1 {
 
 .jumbotron {
     color: #0f1101;
+    width: 70%;
+    float: right;
 }
 
 .i-am-center {
@@ -20,5 +19,21 @@ h1 {
     max-width: auto;
 }
 
+#bitcoin-price {
+    color: rgb(223, 224, 217);
+    float: left;
+    width: 30%;
+}
 
-/*background-color:none !important;*/
+
+/* .float-container {
+    border: 3px solid #fff;
+    padding: 20px;
+}
+
+.float-child {
+    width: 50%;
+    float: left;
+    padding: 20px;
+    border: 2px solid red;
+} */
