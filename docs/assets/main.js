@@ -24,7 +24,7 @@ $.ajax({
     console.log(coinName);
     console.log(coinPrice);
     var bitDiv = $("<div class=table align=center>");
-    bitDiv.append(coinName, " = ", coinPrice, $("<br>"));
+    bitDiv.append(coinName, " = ","$", coinPrice, $("<br>"));
 
     $("#bitcoin-price").append(bitDiv);
   }
