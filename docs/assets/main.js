@@ -1,17 +1,17 @@
-var superLame = "congratulations you are a crypto APE";
-var superApe = ["bitcoin", "hydra", "kcs", "matic"];
-var userGuess = prompt("What is the best crypto currency?");
-var userGuessLower = userGuess.toLowerCase();
+// var superLame = "congratulations you are a crypto APE";
+// var superApe = ["bitcoin", "hydra", "kcs", "matic"];
+// var userGuess = prompt("What is the best crypto currency?");
+// var userGuessLower = userGuess.toLowerCase();
 
 var queryURL =
   "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false";
 // simple/price?ids=hydra%2Cbitcoin&vs_currencies=usd
 
-if (superApe.indexOf(userGuessLower) === -1) {
-  alert("Bitcoin is Better");
-} else {
-  alert(superLame);
-}
+// if (superApe.indexOf(userGuessLower) === -1) {
+//   alert("Bitcoin is Better");
+// } else {
+//   alert(superLame);
+// }
 $.ajax({
   url: queryURL,
   method: "GET",
